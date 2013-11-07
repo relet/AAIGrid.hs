@@ -20,7 +20,7 @@ instance Show ReferencedGrid where
 instance Show GridHeader where 
   show (GridHeader bb rows cols) = show bb ++ "\n" ++ (show rows) ++ " rows\n" ++ (show cols) ++ " columns"
 
-openGridFile :: FilePath -> IO ReferencedGrid
+openGridFile :: FilePath -> ReferencedGrid
 openGridFile filename = do
   bytes <- readFile filename
   case parse gridFile "" bytes of
